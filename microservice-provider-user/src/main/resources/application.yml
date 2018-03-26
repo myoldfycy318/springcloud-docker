@@ -1,15 +1,13 @@
-# 服务器访问端口
 server:
-  port: 8010
+  port: 8000
 
-# 数据库基本配置
 spring:
   application:
     name: microservice-provider-user
   datasource:
-   url: jdbc:mysql://192.168.20.3:3306/test
+   url: jdbc:mysql://127.0.0.1:3306/test
    username: root
-   password: root
+   password: 1qaz@WSX
    driver-class-name: com.mysql.jdbc.Driver
   jpa:
     database: mysql
@@ -19,7 +17,7 @@ spring:
 eureka:
   client:
     service-url:
-      defaultZone: http://localhost:8761/eureka
+      defaultZone: http://peer1:8761/eureka
     instance:
       prefer-ip-address: true
             
