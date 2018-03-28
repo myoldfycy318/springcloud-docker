@@ -1,7 +1,6 @@
-server:
-  port: 8000
-
 spring:
+  profiles:
+    active: dev1
   application:
     name: microservice-provider-user
   datasource:
@@ -17,7 +16,9 @@ spring:
 eureka:
   client:
     service-url:
-      defaultZone: http://peer1:8761/eureka
+      defaultZone: http://peer1:8761/eureka,http://peer2:8762/eureka
     instance:
       prefer-ip-address: true
+      metadata-map:
+        my-metadata: 自定义元数据
             

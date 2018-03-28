@@ -1,10 +1,7 @@
 package springcloud.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import springcloud.dao.UserRepository;
 import springcloud.domain.User;
 
@@ -27,6 +24,17 @@ public class UserController {
     public User findById(@PathVariable Long id) {
         Optional<User> user = this.userRepository.findById(id);
         return user.get();
+    }
+
+
+    @GetMapping("/get")
+    public User get(User user) {
+        return user;
+    }
+
+    @PostMapping("/post")
+    public User post(@RequestBody User user) {
+        return user;
     }
 
 }
