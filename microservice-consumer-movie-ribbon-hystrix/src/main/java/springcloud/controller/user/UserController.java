@@ -1,5 +1,6 @@
 package springcloud.controller.user;
 
+import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,11 +27,20 @@ public class UserController {
     @Autowired
     private LoadBalancerClient loadBalancerClient;
 
-
+    @HystrixCommand(fallbackMethod = "findByIdFallback")
     @GetMapping("/id/{id}")
     public User findById(@PathVariable Long id) {
         return restTemplate.getForObject("http://microservice-provider-user" + "/user/" + id, User.class);
     }
+
+
+    public User findByIdFallback(Long id){
+        User user = new User();
+        user.setId( -1L);
+        user.setName("默认用户");
+        return user;
+    }
+
 
     @GetMapping("/log-user-instance")
     public void logUserInstance() {
