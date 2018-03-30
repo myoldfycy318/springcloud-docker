@@ -1,10 +1,10 @@
 server:
-  port: 8011
+  port: 8012
 
 
 spring:
   application:
-    name: microservice-consumer-movie-feign
+    name: microservice-consumer-movie-feign-hystrix
 
 eureka:
   client:
@@ -22,3 +22,4 @@ feign:
 logging:
   level:
     springcloud.service.UserFeignClient: DEBUG # 将Feign接口的日志级别设置成DEBUG，因为Feign的Logger.Level只对DEBUG作出响应。
+  config: classpath:logback.xml  # 配置logback

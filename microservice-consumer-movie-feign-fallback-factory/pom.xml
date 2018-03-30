@@ -4,11 +4,11 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>springcloud</groupId>
-	<artifactId>microservice-consumer-movie-feign</artifactId>
+	<artifactId>microservice-consumer-movie-feign-hystrix-fallback-factory</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
-	<name>microservice-consumer-movie-feign</name>
+	<name>microservice-consumer-movie-feign-hystrix-fallback-factory</name>
 	<description>Demo project for Spring Boot</description>
 
 	<parent>
@@ -38,12 +38,6 @@
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-starter-netflix-eureka-server</artifactId>
 		</dependency>
-
-		<dependency>
-			<groupId>org.springframework.cloud</groupId>
-			<artifactId>spring-cloud-starter-netflix-hystrix</artifactId>
-		</dependency>
-
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-starter-openfeign</artifactId>
