@@ -5,8 +5,6 @@ import org.springframework.web.bind.annotation.*;
 import springcloud.dao.UserRepository;
 import springcloud.domain.User;
 
-import java.util.Optional;
-
 /**
  * UserController
  *
@@ -22,8 +20,8 @@ public class UserController {
 
     @GetMapping("/{id}")
     public User findById(@PathVariable Long id) {
-        Optional<User> user = this.userRepository.findById(id);
-        return user.get();
+        User user = this.userRepository.findOne(id);
+        return user;
     }
 
 
