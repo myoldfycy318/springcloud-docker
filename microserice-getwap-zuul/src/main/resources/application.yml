@@ -7,3 +7,20 @@ eureka:
   client:
     service-url:
       defaultZone: http://peer1:8761/eureka/
+management:
+  security:
+    enabled: false
+
+zuul:
+  routes:
+    microservice-provider-user:
+      path: /user/**
+      strip-prefix: false
+
+logging:
+  level:
+    com.netflix: DEBUG
+
+
+
+
