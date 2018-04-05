@@ -16,3 +16,4 @@ public class MicroserviceConsumerMovieFeignApplication {
 		SpringApplication.run(MicroserviceConsumerMovieFeignApplication.class, args);
 	}
 }
+                                  

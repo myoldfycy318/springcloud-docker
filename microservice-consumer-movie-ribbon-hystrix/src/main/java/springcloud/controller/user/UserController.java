@@ -29,7 +29,7 @@ public class UserController {
 
     @HystrixCommand(fallbackMethod = "findByIdFallback")
     @GetMapping("/id/{id}")
-    public User findById(@PathVariable Long id) {
+    public User findById4ribbon(@PathVariable Long id) {
         return restTemplate.getForObject("http://microservice-provider-user" + "/user/" + id, User.class);
     }
 

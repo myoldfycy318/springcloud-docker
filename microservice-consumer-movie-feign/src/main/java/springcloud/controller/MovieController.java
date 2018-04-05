@@ -1,6 +1,7 @@
 package springcloud.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.web.bind.annotation.*;
 import springcloud.domain.User;
 import springcloud.service.UserFeignClient;
@@ -11,6 +12,7 @@ import java.util.Map;
 @RestController
 public class MovieController {
 
+    @Qualifier("feignClientFallback")
     @Autowired
     private UserFeignClient userFeignClient;
 

@@ -11,9 +11,7 @@ eureka:
       defaultZone: http://peer1:8761/eureka/
   instance:
     prefer-ip-address: true
-    
 turbine:
-  cluster-name-expression: "'default'"
-  app-config-list: microservice-consumer-movie,microservice-consumer-movie-feign
-  aggregator:
-    cluster-config: default
+  appConfig: microservice-consumer-movie,microservice-consumer-movie-feign
+  clusterNameExpression: "'default'"
+
