@@ -9,15 +9,15 @@ import springcloud.service.UserFeignClient;
 import java.util.HashMap;
 import java.util.Map;
 
+@RequestMapping("movie")
 @RestController
 public class MovieController {
 
-    @Qualifier("feignClientFallback")
     @Autowired
     private UserFeignClient userFeignClient;
 
 
-    @GetMapping("user/{id}")
+    @GetMapping("/{id}")
     public User findById(@PathVariable Long id){
         return userFeignClient.findById(id);
     }

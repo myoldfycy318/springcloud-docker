@@ -1,12 +1,10 @@
 spring:
   profiles:
     active: dev1
-  application:
-    name: microservice-provider-user
   datasource:
-   url: jdbc:mysql://192.168.20.3:3306/test
+   url: jdbc:mysql://127.0.0.1:3306/test?characterEncoding=utf8&useSSL=false
    username: root
-   password: root
+   password: 1qaz@WSX
    driver-class-name: com.mysql.jdbc.Driver
   jpa:
     database: mysql
@@ -21,4 +19,14 @@ eureka:
       prefer-ip-address: true
       metadata-map:
         my-metadata: 自定义元数据
+
+
+logging:
+  level:
+    root: INFO
+    org.springframework.cloud.sleuth: DEBUG
+    # org.springframework.web.servlet.DispatcherServlet: DEBUG
+
+
+
             
