@@ -75,9 +75,9 @@
         </encoder>
     </appender>
     ​
-  <!--  <root level="INFO">
+    <root level="INFO">
         <appender-ref ref="console"/>
         <appender-ref ref="logstash"/>
-        &lt;!&ndash;<appender-ref ref="flatfile"/> &ndash;&gt;
-    </root>-->
+        <!--<appender-ref ref="flatfile"/> -->
+    </root>
 </configuration>

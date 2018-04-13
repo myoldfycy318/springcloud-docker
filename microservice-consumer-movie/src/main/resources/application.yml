@@ -3,6 +3,11 @@ server:
 spring:
   application:
     name: microservice-consumer-movie
+  zipkin:
+    base-url: http://localhost:9411
+  sleuth:
+    sampler:
+      percentage: 100
 
 eureka:
   client:
@@ -15,6 +20,10 @@ eureka:
 
 # 配置logback
 logging:
+  level:
+    root: INFO
+    org.springframework.cloud.sleuth: DEBUG
+    # org.springframework.web.servlet.DispatcherServlet: DEBUG
   config: classpath:logback.xml
 
 

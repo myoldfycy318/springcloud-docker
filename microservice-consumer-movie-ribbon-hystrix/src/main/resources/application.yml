@@ -2,7 +2,12 @@ server:
   port: 8010
 spring:
   application:
-    name: microservice-consumer-movie
+    name: microservice-consumer-movie-ribbon-hystrix
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
 
 eureka:
   client:

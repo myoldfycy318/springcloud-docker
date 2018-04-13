@@ -2,12 +2,13 @@ package springcloud.service;
 
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.*;
+import springcloud.configuration.FeignLogConfiguration;
 import springcloud.domain.User;
 import springcloud.fallbackfactory.FeignClientFallbackFactory;
 
 import java.util.Map;
 
-@FeignClient(name = "microservice-provider-user", fallbackFactory = FeignClientFallbackFactory.class)
+@FeignClient(name = "microservice-provider-user", fallbackFactory = FeignClientFallbackFactory.class,configuration = FeignLogConfiguration.class)
 public interface UserFeignClient {
 
     @RequestMapping(value = "/user/{id}", method = RequestMethod.GET)

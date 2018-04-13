@@ -5,6 +5,14 @@ server:
 spring:
   application:
     name: microservice-consumer-movie-feign-hystrix
+  sleuth:
+      sampler:
+        percentage: 1.0
+  rabbitmq:
+      host: localhost
+      port: 5762
+      username: guest
+      password: guest
 
 eureka:
   client:
