@@ -1,0 +1,11 @@
+spring:
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/myoldfycy318/{application}
+          username: myoldfycy318
+          password: 1qaz@WSX
+
+## 测试：可以使用http://localhost:8888/spring-cloud-config-repo-default.yml 获取到https://github.com/myoldfycy318/spring-cloud-config-repo/tree/master目录下文件application.properties中的所有内容
+

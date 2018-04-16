@@ -1,0 +1,15 @@
+spring:
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/myoldfycy318/spring-cloud-config-repo
+          username: myoldfycy318
+          password: 1qaz@WSX
+          clone-on-start: true #启动时加载配置文件
+        health:
+          repositories:
+            a-foo: 
+              label: config-label-v2.0
+              name: microservice-foo
+              profiles: dev

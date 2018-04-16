@@ -1,0 +1,22 @@
+server:
+  port: 8888
+spring:
+  application:
+    name: microservice-config-server
+  cloud:
+    config:
+      server:
+        git:
+          clone-on-start: true
+          uri: https://github.com/myoldfycy318/spring-cloud-config-repo
+          password: 1qaz@WSX
+          username: myoldfycy318
+
+encrypt:
+  key: foo  # 设置对称密钥
+
+
+logging:
+  level:
+    org.springframework.cloud: DEBUG
+    org.springframework.boot: DEBUG

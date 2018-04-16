@@ -1,0 +1,16 @@
+
+spring:
+  application:
+    name: microservice-foo
+  cloud:
+    config:
+      uri: http://localhost:8888/
+      profile: dev
+      label: master
+server:
+  port: 8081
+
+
+management:
+  security:
+    enabled: false #client服务开启了actuator权限拦截
